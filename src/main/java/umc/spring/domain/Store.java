@@ -2,7 +2,6 @@ package umc.spring.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import umc.spring.domain.mapping.MemberMission;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +20,17 @@ public class Store {
     @Column(nullable = false, length = 40)
     private String name;
 
+    private String type;
+
     @Column(nullable = false, length = 100)
     private String address;
 
-    private Float score;
+    private String business_hour;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "region_id")
-    private Region region;
+    private Long region;
+
+    @Column(length = 500)
+    private String description;
 
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Mission> missionList = new ArrayList<>();

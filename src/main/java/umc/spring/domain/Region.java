@@ -23,4 +23,7 @@ public class Region {
 
     @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)
     private List<Store> storeList = new ArrayList<>();
+
+    public Region(long id, Object name) {
+    }
 }
