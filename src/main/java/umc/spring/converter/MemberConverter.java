@@ -74,10 +74,13 @@ public class MemberConverter {
     public static MissionResponseDTO.MemberMissionPreViewDTO memberMissionPreViewDTO(MemberMission mission){
         return MissionResponseDTO.MemberMissionPreViewDTO.builder()
                 .id(mission.getId())
-                .memberId(mission.getMember().getId())
                 .missionId(mission.getMission().getId())
-                .create_at(mission.getCreatedAt())
+                .created_at(mission.getCreatedAt())
+                .updated_at(mission.getUpdatedAt())
                 .status(String.valueOf(mission.getStatus()))
+                .reward(mission.getMission().getReward())
+                .missionSpec(mission.getMission().getMissionSpec())
+                .deadline(mission.getMission().getDeadline())
                 .build();
     }
     public static MissionResponseDTO.MemberMissionPreViewListDTO memberMissionPreViewListDTO(Page<MemberMission> missionList){

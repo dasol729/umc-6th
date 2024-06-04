@@ -69,10 +69,25 @@ public class MissionResponseDTO {
     @AllArgsConstructor
     public static class MemberMissionPreViewDTO{
         Long id;
-        Long memberId;
         Long missionId;
-        LocalDateTime create_at;
-        LocalDateTime update_at;
+        LocalDateTime created_at;
+        LocalDateTime updated_at;
         String status;
+        Integer reward;
+        String missionSpec;
+        LocalDate deadline;
     }
+
+//    @Builder
+//    @Getter
+//    @NoArgsConstructor
+//    @AllArgsConstructor
+//    public static class MemberMissionPreViewDTO{
+//        Long id;
+//        Long memberId;
+//        Long missionId;
+//        LocalDateTime create_at;
+//        LocalDateTime update_at;
+//        String status;
+//    }
 }
