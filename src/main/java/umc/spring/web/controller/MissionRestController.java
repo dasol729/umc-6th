@@ -19,7 +19,7 @@ public class MissionRestController {
 
     @PostMapping("/{storeId}")
     public ApiResponse<MissionResponseDTO.JoinResultDTO> join(
-            @RequestBody @Valid MissionRequestDTO.JoinDto request,
+            @RequestBody @Valid MissionRequestDTO.MissionJoinDto request,
             @PathVariable("storeId") @Valid String storeId){
         Mission mission = missionCommandService.joinMission(request, storeId);
         return ApiResponse.onSuccess(MissionConverter.toJoinResultDTO(mission));

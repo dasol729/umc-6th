@@ -22,6 +22,9 @@ public class Review {
 
     private Float score;
 
+    @Column(length = 100)
+    private String body;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;

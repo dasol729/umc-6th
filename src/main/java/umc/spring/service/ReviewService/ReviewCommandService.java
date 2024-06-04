@@ -6,5 +6,5 @@ import umc.spring.web.dto.ReviewDTO.ReviewRequestDTO;
 
 public interface ReviewCommandService {
     @Transactional
-    Review joinReview(ReviewRequestDTO.JoinDto request, String restaurantId);
+    Review joinReview(ReviewRequestDTO.ReviewJoinDto request, String restaurantId);
 }

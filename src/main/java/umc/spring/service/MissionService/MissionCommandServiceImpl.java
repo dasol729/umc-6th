@@ -30,7 +30,7 @@ public class MissionCommandServiceImpl implements MissionCommandService {
 
     @Override
     @Transactional
-    public Mission joinMission(MissionRequestDTO.JoinDto request, String storeId) {
+    public Mission joinMission(MissionRequestDTO.MissionJoinDto request, String storeId) {
 
         Mission newMission = MissionConverter.toMission(request);
 

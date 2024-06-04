@@ -26,7 +26,7 @@ public class ReviewCommandServiceImpl implements ReviewCommandService {
 
     @Override
     @Transactional
-    public Review joinReview(ReviewRequestDTO.JoinDto request, String restaurantId) {
+    public Review joinReview(ReviewRequestDTO.ReviewJoinDto request, String restaurantId) {
 
         Review newReview = ReviewConverter.toReview(request);
 

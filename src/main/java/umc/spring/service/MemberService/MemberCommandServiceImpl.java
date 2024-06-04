@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class MemberCommandServiceImpl implements MemberCommandService{
 
     private final MemberRepository memberRepository;
@@ -27,7 +28,7 @@ public class MemberCommandServiceImpl implements MemberCommandService{
 
     @Override
     @Transactional
-    public Member joinMember(MemberRequestDTO.JoinDto request) {
+    public Member joinMember(MemberRequestDTO.MemberJoinDto request) {
 
         Member newMember = MemberConverter.toMember(request);
         List<FoodCategory> foodCategoryList = request.getPreferCategory().stream()
